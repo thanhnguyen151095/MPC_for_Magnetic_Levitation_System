@@ -2,6 +2,9 @@
 Model Predictive Control (MPC)  for Magnetic Levitation Systems
 
 # Description of Magnetic Levitation System
+
+<img src="Figures/MLS.PNG" alt="Description" width="800">
+
 The dynamic model of a n-joint robot manipulator is expressed by the following equation:
 
 $$
