@@ -3,6 +3,8 @@ Model Predictive Control (MPC)  for Magnetic Levitation Systems
 
 # Description of Magnetic Levitation System
 
+An MLS is illustrated in Fig. 1, consisting of four main components: a metal sphere (with mass $m$), an infrared sensor (transmitter and detector), a controller, and an actuator (comprising an electromagnet and power amplifier). The metal sphere is primarily controlled via the current in the electromagnetic coil $I$, which generates the electromagnetic force $F(y, I)$. This force depends on the coil current $I$ and the distance $y$, enabling the control of the metal sphere's vertical motion under the influence of both electromagnetic force and gravity.
+
 <img src="Figures/MLS.PNG" alt="Description" width="800">
 
 The dynamic model of a n-joint robot manipulator is expressed by the following equation:
