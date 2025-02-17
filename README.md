@@ -16,13 +16,13 @@ $$
 where $g$ is the gravitational acceleration, and $\psi  = \frac{\chi K^2}{m}$. Here, $\chi$ is a constant depending on the electromagnet coil parameters, $K = I/U$ is a linear relation constant between the winding current and input voltage, and $U$ is the control input.
 
 
-The goal is to design an optimal control input $\tau$ that guides the actual joint position $q$ to match the target trajectory $q_d \in R^n$.
+The goal is to design an optimal control input $U$ that guides the actual joint position $q$ to match the target trajectory $q_d \in R^n$.
 
 # MPC Formulation
 We begin by defining the system state vector as follows:
 
 $$
-x = \begin{bmatrix} q^T \\ \dot{q}^T \end{bmatrix}^T
+x = \begin{bmatrix} y \\ \dot{y} \end{bmatrix}^T
 $$
 
 Next, we can express the tracking error as:
@@ -31,12 +31,12 @@ $$
 e = x - x_d
 $$
 
-Here, $x_d = [q^T_d \\ \dot{q}^T_d]^T$ denotes the desired trajectory, where $q_d$ and $\dot{q}_d$ represent the desired position and velocity, respectively.
+Here, $x_d = [y^T_d \\ \dot{y}^T_d]^T$ denotes the desired trajectory, where $y_d$ and $\dot{y}_d$ represent the desired position and velocity, respectively.
 
 MPC minimizes the following quadratic cost function over a prediction horizon \( N \):
 
 $$
-J = \sum_{k=0}^{N} \left( e ^T Q e + u_k^T R u_k \right)
+J = \sum_{k=0}^{N} \left( e ^T Q e + U_k^T R U_k \right)
 $$
 
 where:  
@@ -47,7 +47,7 @@ where:
 The control input is optimized under the constraints:
 
 $$
-u_{\text{min}} \leq u_k \leq u_{\text{max}}
+U_{\text{min}} \leq U_k \leq U_{\text{max}}
 $$
 
 MPC solves this optimization problem at every time step and applies only the first control input.
@@ -70,11 +70,11 @@ Define time step dt
   
     u_k = u(n*k-n+1:n*k)
     
-    x_pred = x_pred + dt* $[\dot{q}, M^{-1}(q) \left( \tau - C(q, \dot{q}) \dot{q} - G(q) \right)]^T$
+    x_pred = x_pred + dt* $[\dot{y}, \ddot{y}]^T$
     
     e = x_pred - x_ref
     
-    J = J + e' * Q * e + u_k' * R * u_k; % Compute cost
+    J = J + e' * Q * e + U_k' * R * U_k; % Compute cost
     
   end for
 
