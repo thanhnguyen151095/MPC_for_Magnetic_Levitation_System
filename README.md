@@ -10,30 +10,11 @@ An MLS is illustrated in Fig. 1, consisting of four main components: a metal sph
 The nonlinear model of an MLS is expressed as follows:
 
 $$
-\ddot{y} = g - \frac{\hat{\psi }}{{y^2}} U^2 + \Delta(y,U,t)
+\ddot{y} = g - \frac{\psi }{{y^2}} U^2
 $$
 
-where $g$ is the gravitational acceleration, and $\hat{\psi }$ is the estimated value of $\psi $, where $\psi  = \frac{\chi K^2}{m}$. Here, $\chi$ is a constant depending on the electromagnet coil parameters, and $K = I/U$ is a linear relation constant between the winding current and input voltage. The term $\Delta (y, U, t) = \Delta \psi  \frac{U^2}{y^2} + D(t)$ represents the dynamic uncertainties and external disturbance, with $U$ as the control input, $\Delta \psi $ as the uncertain dynamical term, and $D(t)$ as the external disturbance.
+where $g$ is the gravitational acceleration, and $\psi  = \frac{\chi K^2}{m}$. Here, $\chi$ is a constant depending on the electromagnet coil parameters, $K = I/U$ is a linear relation constant between the winding current and input voltage, and $U$ is the control input.
 
-The dynamic equation \eqref{eq3.56} can be reformulated into a second-order state-space form as follows:
-
-$$
-\left\{
-\begin{array}{l}
-\dot{X}_1 = X_2 \\
-\dot{X}_2 = \hat{ f } + \Sigma(X,u,t) + \hat{ b }(X,t)u
-\end{array}
-\right.
-$$
-
-where $X_1 = y$, $X_2 = \dot{y}$, and $X = \left[ X_1 ~ X_2 \right]^T$ represents the system state vector. Additionally, $\hat{ f }(X,t) = g$, $ b (X,t) = -\frac{\hat{\psi }}{y^2}$, $\Sigma(X,u,t) = \Delta (y,U,t)$, and $u = U^2$.
-
-Clearly, Eq. \eqref{eq3.57} represents a second-order nonlinear system.
-
-The proposed control system can, therefore, be applied to the MLS described by Eq. \eqref{eq3.57}. With $u = U^2$, the actual control input for the MLS is given by:
-\begin{equation}
-U = \sqrt{u}
-\end{equation}
 
 The goal is to design an optimal control input $\tau$ that guides the actual joint position $q$ to match the target trajectory $q_d \in R^n$.
 
