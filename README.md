@@ -88,11 +88,10 @@ Define time step dt
 
 **2-DOF Robot Manipulator**
 
-<img src="https://github.com/user-attachments/assets/16ad4c61-c7ad-432b-a4a2-fa867f2ed659" alt="2-DOF Robot Manipulator" width="800">
+<<img src="Figures/MLS2.png" alt="Description" width="800">>
 
 **Simulation Video** 
 
-<img src="Figures/video.gif" alt="Description" width="800">
 
 **Simulation Results**
 
