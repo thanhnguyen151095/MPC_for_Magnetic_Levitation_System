@@ -96,16 +96,16 @@ Define time step dt
 
 **Simulation Results**
 
-|_|_|
-|:---:|:---:|
-<img src="Figures/end-effector_tracking.png" alt="Description" width="600">| <img src="Figures/joint_tracking.png" alt="Description" width="600">|
-<img src="Figures/e1.png" alt="Description" width="600">| <img src="Figures/e2.png" alt="Description" width="600">|
-<img src="Figures/u1.png" alt="Description" width="600">| <img src="Figures/u2.png" alt="Description" width="600">|
+|_|
+|:---:|
+<img src="Figures/tracking.png" alt="Description" width="800">|
+<img src="Figures/trackingerror.png" alt="Description" width="800">|
+<img src="Figures/Controlinput.png" alt="Description" width="800">|
 
 **Discussion**
 
-Examining the simulation outcomes reveals that the actual joint position trajectories closely follow the desired paths. 
-Furthermore, the control signals are smooth and align with the saturation behavior of the hardware limits.
+Examining the simulation outcomes reveals that the actual position trajectory closely follows the desired path. 
+Furthermore, the control signal is smooth and aligns with the saturation behavior of the hardware limits.
 
 # Conclusion
 
