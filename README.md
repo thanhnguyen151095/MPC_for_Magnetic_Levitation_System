@@ -86,9 +86,9 @@ Define time step dt
 
 # Simulation Results and Discussion
 
-**2-DOF Robot Manipulator**
+**Magnetic Levitation System**
 
-<<img src="Figures/MLS2.png" alt="Description" width="800">>
+<img src="Figures/MLS2.PNG" alt="Description" width="800">
 
 **Simulation Video** 
 
